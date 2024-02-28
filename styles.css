@@ -1,0 +1,699 @@
+/* Andrew Kim CST8285 Assignment 1 041093549 */
+/* Importing some fonts from local folder */
+@font-face{
+    font-family: "titillium-bold";
+        src: url("fonts/TitilliumWeb-Bold.ttf");
+}
+
+@font-face {
+    font-family: "montserrat-light";
+    src: url("fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: "montserrat-bold";
+    src: url("fonts/Montserrat-Bold.ttf");
+    font-weight: bold;
+}
+
+/* Resetting all margin/padding and setting all box-sizing to include margin/padding */
+* { margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling links to fit with the visual theme */
+a {
+    text-decoration:none;
+    
+}
+a:link {
+    color: #d9d9d9
+}
+
+a:visited {
+    color: #d9d9d9
+}
+
+a:hover {
+    color:  #ababab;
+}
+
+/* Setting all list elements to have no unnecessary styling, also setting default font family */ 
+html * {
+    font-family: Arial, Helvetica, sans-serif;
+    list-style-type:none;
+    
+}
+/* Setting background and font color defaults for the site */
+body {
+    background-color: #121212;
+    color:#d9d9d9;
+}
+
+/* Container that was needed for CSS to behave as intended */
+.indexmain {
+    display: flex;
+    flex-direction: column;
+}
+/* Container that was needed for CSS to behave as intended */
+.contactmain{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: xx-large;
+}
+
+/* Styling the header that is shared across all pages */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem;
+    padding: 1rem;
+    color:#d9d9d9;
+    font-size: 2rem;
+}
+/* Styling the footer that is shared across all pages */
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 10em 1em 2em 0;
+    font-style: italic;
+    
+}
+
+/* Ensuring that the site title does not shrink with window size */
+.sitetitle {
+    flex-shrink: 0;   
+}
+
+/* Styling the navigation menu and its items */
+.navmenu {
+    display: flex;
+    gap: .5em;      
+    margin: .5em;
+}
+.navitem{
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    padding-left: .5em;
+    font-weight: 700;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+/* Adding a slight glow effect to the main containers for visual pop */
+.aboutme, .resumecontent, .courseitem, .formcontainer, #contactbutton{
+    box-shadow: 0 0 11px rgba(240, 240, 240, 0.1);
+}
+/* Styling the home page from here */
+.aboutme {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4em;
+    align-self: center;
+    color: #d9d9d9;   
+    background-color:#ffffff07;
+    padding: 2em;
+    font-size: 2rem;
+    border-radius: 50px;
+    max-width: 1200px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+/* Styling the elements of the container */
+.aboutme-item { 
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5em;
+    margin: 1em;
+}
+.aboutme-image {
+    display: flex;
+    align-self: center;
+    min-width: 20vw;
+}
+.portrait {
+    width: 100%;
+    border-radius: 40px;
+}
+.title {
+    font-family: "montserrat-bold";
+    padding-bottom: 1em;
+}
+/* Styling most paragraph elements used in the site to use a different font */
+.paragraph {
+    font-family: "montserrat-light";
+}
+/* Styling the resume page from here*/
+.resumemain{
+    display: flex;
+    justify-content: center;
+    text-align:justify;
+}
+.resumecontainer  {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff07;
+    max-width: 1000px;
+    padding-right: 1em;
+    padding-left: 1em;
+    border-radius: 20px;
+}
+.resumecontent {
+    background-color: #ffffff07;
+    border-radius: 20px;
+    padding-right: 3em;
+    padding-left: 3em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.resumedetails {
+    font-size: 1.3rem;
+    line-height: 1.7em;
+}
+.resumeheader {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    font-family: montserrat-bold;
+}
+.resumesubheader {
+    font-size: 1.5rem;  
+    line-height: 1.5em;
+    padding-bottom: .5em;
+    padding-top: .5em;
+}
+/* Using class selector here to create a two column layout for the Skills and Education sections of the resume */
+#resumeskills {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    
+}
+.educationcontainer{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+/* Styling the Courses page from here */
+.coursesmain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color:#141414;
+}
+.coursecontainer {
+    display: flex; 
+    gap: 2em;
+    margin: 2em;
+    justify-content: center;
+    max-width: 1200px;    
+}
+.courseheading {
+    margin: .5em;
+    padding: .5em;
+    font-size: 2.5rem;
+    font-family: "montserrat-bold";    
+}
+.courseitem {
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff07;
+    align-items: center;
+    font-size: 1em;
+}
+/* Using object-fit to help with resizing images of courses appropriately */
+.courseitem img {
+    width: 280px;
+    margin: .5em;
+    height: auto;  
+    object-fit: contain;
+    padding-bottom: 2em;
+}
+
+.coursename {
+    font-size: 1.5rem;
+    font-weight:bold;
+}
+
+.coursecode {
+    font-size: 1rem;
+    font-weight:bold;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+/* Styling the Contact Me page from here */
+.formcontainer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    background-color: #ffffff07;
+    margin: 1em;
+    border-radius: 20px;
+    padding: 1.5em;
+}
+
+.contactheader{
+    font-family: montserrat-bold;
+    margin-bottom: 1.3em;
+}
+label {
+    font-family: "montserrat-bold";
+    font-size: x-large;
+    margin: 1em;
+    text-align: left;
+}
+#contactbutton {
+    padding: .5em 1em .5em 1em;
+    margin-left: 1em;
+    font-size: .75em;
+    border-radius: 5px;
+    background-color: #d9d9d9;
+    color: #121212;
+    font-family: montserrat-bold;
+}
+/* Styling the input fields */
+.contactinput { 
+    margin: 1em;
+    padding: .5em;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: #ffffff00;
+    color: #d9d9d9;
+}
+/* Media query settings for PHONE, portrait and landscape orientations */
+
+/* PORTRAIT */
+@media (max-width: 450px) and (max-height: 932px) {
+    .aboutme {
+        font-size: .65rem;
+        width: 95%;
+    }
+
+    footer {
+        font-size: .6rem;
+    }
+    .navitem, .navmenu{
+        flex-shrink: 1;
+        font-size: .6rem;
+
+    }
+    .sitetitle {
+        font-size: 1.2rem;
+    }
+
+    .aboutme-image {
+        max-width: 30vw;
+    }
+
+    .resumeheader {
+        font-size: 1.25em;
+    }
+
+    .resumesubheader {
+        font-size: 1.1em;
+    }
+
+    .resumedetails {
+        font-size: .9em;
+    }
+
+    .courseitem img {
+        width: 120px;
+    }
+
+    .courseheading {
+        font-size:2rem;
+    }
+
+    .coursecontainer {
+        flex-wrap: wrap;
+    }
+
+    .courseheading, .coursename {
+        font-size: 120%;
+    }
+
+    .contactmain {
+        font-size: 1em;
+    }
+    
+    label {
+        font-size: 1em;
+    }
+
+    .contactinput {
+        width: 80%;
+    }
+
+    .formcontainer {
+        width: 90vw;
+    }
+}
+/* LANDSCAPE */
+@media (max-width: 932px) and (max-height: 450px){
+    .aboutme {
+        font-size: 1.2rem;
+        
+        
+    }
+    footer {
+        font-size: .6rem;
+    }
+    .navitem, .navmenu{
+        flex-shrink: 1;
+        font-size: .85rem;
+
+    }
+    .sitetitle {
+        font-size: 1.25em;
+    }
+
+    .aboutme-image {
+        max-width: 35vw;
+    }
+
+    .resumeheader {
+        font-size: 1.25em;
+    }
+
+    .resumesubheader {
+        font-size: 1.1em;
+    }
+
+    .resumedetails {
+        font-size: .9em;
+    }
+
+    .courseitem {
+        flex-basis: 300px;
+        max-height: 80%;
+    }
+    .courseitem img {
+        width: 150px;
+    }
+
+    .courseheading {
+        font-size:2rem;
+    }
+
+    .coursecontainer {
+        flex-wrap: wrap;
+    }
+
+    .courseheading, .coursename {
+        font-size: 130%;
+    }
+
+    .contactmain {
+        font-size: 1em;
+    }
+    
+    label {
+        font-size: 1em;
+    }
+
+    .contactinput {
+        width: 100%;
+    }
+
+    .formcontainer {
+        width: 60vw;
+    }
+}
+/* Media query for TABLETS, portrait and landscape */
+
+/* PORTRAIT */
+@media (min-width: 768px) and (min-height: 1024px) {
+    .aboutme {
+        font-size: 1rem;
+        width: 95%;
+    }
+    .navitem, .navmenu{
+        flex-shrink: 1;
+        font-size: .9rem;
+
+    }
+    .sitetitle {
+        font-size: 1.6rem;
+    }
+
+    .aboutme-image {
+        max-width: 35vw;
+    }
+    
+    footer {
+        font-size: .6rem;
+    }
+    
+    .resumeheader {
+        font-size: 1.25em;
+    }
+
+    .resumesubheader {
+        font-size: 1.1em;
+    }
+
+    .resumedetails {
+        font-size: .9em;
+    }
+
+    .courseitem {
+        flex-basis: 300px;
+        max-height: 80%;
+    }
+    .courseitem img {
+        width: 150px;
+    }
+
+    .courseheading {
+        font-size:2rem;
+    }
+
+    .coursecontainer {
+        flex-wrap: wrap;
+    }
+
+    .courseheading, .coursename {
+        font-size: 140%;
+    }
+
+    .contactmain {
+        font-size: 1em;
+    }
+    
+    label {
+        font-size: 1em;
+    }
+
+    .contactinput {
+        width: 100%;
+    }
+
+    .formcontainer {
+        width: 60vw;
+    }
+    
+}
+/* LANDSCAPE */
+@media (min-width: 1024px) and (max-height: 768px) {
+
+    .aboutme {
+        font-size: 1.4rem;
+        
+    }
+    .navitem, .navmenu{
+        flex-shrink: 1;
+        font-size: 1rem;
+
+    }
+    .sitetitle {
+        font-size: 1.6rem;
+    }
+
+    .aboutme-image {
+        max-width: 35vw;
+    }
+    footer {
+        font-size: .6rem;
+    }
+    
+    .courseitem {
+        flex-basis: 450px;
+        max-height: 80%;
+    }
+    .courseitem img {
+        width: 200px;
+    }
+
+    .courseheading {
+        font-size:2rem;
+    }
+
+    .coursecontainer {
+        flex-wrap: wrap;
+    }
+
+    .contactmain {
+        font-size: 1em;
+    }
+    
+    label {
+        font-size: 1em;
+    }
+
+    .contactinput {
+        width: 100%;
+    }
+
+    .formcontainer {
+        width: 70vw;
+    }
+    
+}
+
+/* IPAD PRO SPECIFIC PORTRAIT*/
+@media (min-width: 1024px) and (max-height: 1366px) {
+    .aboutme {
+        font-size: 1.4rem;
+        
+    }
+    .navitem, .navmenu{
+        flex-shrink: 1;
+        font-size: 1rem;
+
+    }
+    .sitetitle {
+        font-size: 1.9rem;
+    }
+
+    .aboutme-image {
+        max-width: 35vw;
+    }
+    footer {
+        font-size: .6rem;
+    }
+    
+    .resumeheader {
+        font-size: 1.8em;
+    }
+
+    .resumesubheader {
+        font-size: 1.5em;
+    }
+
+    .resumedetails {
+        font-size: 1.2em;
+    }
+
+    .courseitem {
+        flex-basis: 400px;
+        max-height: 80%;
+    }
+    .courseitem img {
+        width: 200px;
+    }
+
+    .courseheading {
+        font-size:2rem;
+    }
+
+    .coursecontainer {
+        flex-wrap: wrap;
+    }
+
+    .contactmain {
+        font-size: 1em;
+    }
+    
+    label {
+        font-size: 1em;
+    }
+
+    .contactinput {
+        width: 100%;
+    }
+
+    .formcontainer {
+        width: 50vw;
+    }
+
+}
+/* IPAD PRO SPECIFIC LANDSCAPE*/
+@media (min-width: 1366px) and (max-height: 1024px) {
+    .aboutme {
+        font-size: 1.4rem;
+        
+    }
+    .navitem, .navmenu{
+        flex-shrink: 1;
+        font-size: 1rem;
+
+    }
+    .sitetitle {
+        font-size: 1.9rem;
+    }
+
+    .aboutme-image {
+        max-width: 35vw;
+    }
+    footer {
+        font-size: .6rem;
+    }
+    
+    .resumeheader {
+        font-size: 1.7em;
+    }
+
+    .resumesubheader {
+        font-size: 1.3em;
+    }
+
+    .resumedetails {
+        font-size: 1.1em;
+    }
+
+    .courseitem {
+        flex-basis: 200px;
+        max-height: 80%;
+    }
+    .courseitem img {
+        width: 200px;
+    }
+
+    .courseheading {
+        font-size:2rem;
+    }
+
+    .coursecontainer {
+        flex-wrap: wrap;
+    }
+
+    .contactmain {
+        font-size: 1em;
+    }
+    
+    label {
+        font-size: 1em;
+    }
+
+    .contactinput {
+        width: 100%;
+    }
+
+    .formcontainer {
+        width: 50vw;
+    }
+}
+
+@media (orientation: portrait) {
+    #resumeskills, .educationcontainer {
+        display: block;
+    }
+}

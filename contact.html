@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Andrew Kim - Contact</title>
+</head>
+<body>
+    <header>
+        <h1 class="sitetitle">Andrew Kim.</h1>
+        <nav class="navbar">
+            <ul class="navmenu">
+            <li class="navitem"><a href="index.html">Home</a></li>
+            <li class="navitem"><a href="resume.html">Resume</a></li>
+            <li class="navitem"><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="contactmain">
+    <section class="formcontainer">
+        <h2 class="contactheader">Contact Me:</h2>
+        <form class="contactmeform">      
+            <label for="name">Name: </label><br>
+            <input class="contactinput" type="text" id="name" name="name" required><br>
+            <label for="email">Email Address:</label><br>
+            <input class="contactinput" type="email" id="email" name="email" size="50" placeholder="format for email is xxx@yyy.zzz" required><br>
+            <label for="subject">Subject: </label><br>
+            <input class="contactinput" type="text" id="subject" name="subject" size="50" required minlength="5" maxlength="50"><br>
+            <label for="message">Message: </label><br>
+            <textarea class="contactinput" id="message" name="message" cols="50" rows="5" required ></textarea><br>
+            <button id="contactbutton" class="contactme" type="submit" name="sendit">Send</button>    
+        </form>
+    </section>
+    </main>
+    <footer>
+        <p> Andrew Kim 2024 &#169;</p>
+    </footer>
+</body>
+</html>
